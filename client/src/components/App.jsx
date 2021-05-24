@@ -3,31 +3,36 @@ import React from 'react';
 import groceriesData from '../data/groceriesData.js'
 import GroceryItem from './groceryItem.jsx'
 
-function App() {
-  var groceryList = groceriesData.map((item, index) => {
-    return (<GroceryItem name = {item.name} quantity = {item.quantity} key = {index}/>)
-  })
-return (
-        <div>
-          <img src="grocery-bags.png" />
-          <h1>Grocery List</h1>
-          <form>
-            <label> Item
-              <input name="item" value="" />
-            </label>
-            <label> Quantity
-              <input name="quantity" value="" />
-            </label>
-            <button>Add Grocery</button>
-            <ul className="groceries">
-              <li>
-                <span>{groceryList}</span>
-              </li>
-            </ul>
-          </form>
-        </div>
-      );
-//     }
+class App extends React.Component {
+  constructor() {
+    super()
+  }
+
+  render() {
+    var groceryList = groceriesData.map((item, index) => {
+      return (<GroceryItem name = {item.name} quantity = {item.quantity} key = {index}/>)
+    })
+  return (
+          <div>
+            <img src="grocery-bags.png" />
+            <h1>Grocery List</h1>
+            <form>
+              <label> Item
+                <input name="item" value="" />
+              </label>
+              <label> Quantity
+                <input name="quantity" value="" />
+              </label>
+              <button>Add Grocery</button>
+              <ul className="groceries">
+                <li>
+                  <span>{groceryList}</span>
+                </li>
+              </ul>
+            </form>
+          </div>
+        );
+  }
 }
 
 export default App;
