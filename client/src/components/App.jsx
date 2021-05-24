@@ -13,13 +13,13 @@ const App = () => (
         <input name="quantity" value="" />
       </label>
       <button>Add Grocery</button>
-      <ul className="groceries">
+      <ul>
         <li>
-          <span>apples - </span>
+          <span>apples</span>
           <span>4</span>
         </li>
         <li>
-          <span>bread - </span>
+          <span>bread</span>
           <span>2</span>
         </li>
         <li>
