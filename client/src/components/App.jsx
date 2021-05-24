@@ -6,7 +6,14 @@ import GroceryItem from './groceryItem.jsx'
 class App extends React.Component {
   constructor() {
     super()
+    this.state = {}
+    this.addGrocery = this.addGrocery.bind(this);
   }
+
+   addGrocery (e) {
+    e.preventDefault();
+    console.log('grocery list add!')
+   };
 
   render() {
     var groceryList = groceriesData.map((item, index) => {
@@ -17,13 +24,9 @@ class App extends React.Component {
             <img src="grocery-bags.png" />
             <h1>Grocery List</h1>
             <form>
-              <label> Item
-                <input name="item" value="" />
-              </label>
-              <label> Quantity
-                <input name="quantity" value="" />
-              </label>
-              <button>Add Grocery</button>
+              <label><input name="itemInput" placeholder="Item name" /></label>
+              <label><input name="quantityInput" placeholder="# of items" /></label>
+              <button onClick = {this.addGrocery}>Add Grocery</button>
               <ul className="groceries">
                 <li>
                   <span>{groceryList}</span>
